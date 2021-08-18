@@ -1,0 +1,18 @@
+<template>
+    <lightning-card title="Display Employee using For Each loop">
+        <lightning-layout>
+            <lightning-layout-item size="6" padding="around-small">
+                <b>===============Employees Details============</b>
+                <br></br>
+                <template for:each={employees} for:item="emp">
+                    <p key={emp.id}>
+                        Employee Name : {emp.name} <br/>
+                        Employee Age : {emp.age} <br/>
+                        Employee City : {emp.city} <br/>
+                        Employee Salary : {emp.salary} <br/><br/>
+                    </p>
+                </template>
+            </lightning-layout-item>
+        </lightning-layout>
+    </lightning-card>
+</template>
