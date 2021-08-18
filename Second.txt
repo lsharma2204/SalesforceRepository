@@ -1,1 +1,1 @@
-This file is a part of Developer branch
+This file is a part of Developer branch (Used Git Bash)
