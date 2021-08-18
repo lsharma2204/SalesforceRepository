@@ -1,0 +1,15 @@
+<apex:page controller="List_Example_1">
+    <apex:form >
+    	<apex:dataTable value="{!students}" var="a" cellpadding="10" cellspacing="10" width="800" rules="rows"
+                        frame="border" id="dt">
+            <apex:column headerValue="Name">
+            	<apex:inputText value="{!a.name}"/>
+            </apex:column>
+            
+            <apex:column headerValue="Action">
+            	<apex:commandLink value="Add" action="{!addMe}" reRender="dt"/>
+                <apex:commandLink value="Clear" action="{!clearMe}" reRender="dt"/>
+            </apex:column>
+        </apex:dataTable>
+    </apex:form>
+</apex:page>

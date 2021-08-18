@@ -1,0 +1,38 @@
+<!--
+Author		:	Lakshaya Sharma
+Description	:	showing Related List in different tabs
+Version		:	1.0
+CreatedDate	:	06/06/2021
+-->
+<apex:page >
+    
+    <style>
+    	.one{
+        		background:white;
+        		color	: red;
+        	}
+        .two{
+        		background:grey;
+        		color	: black;
+        	}
+        .three{
+        		background:white;
+        		color:black;
+        }
+    </style>
+    <apex:tabPanel width="100%" headerClass="one" activeTabClass="two" inactiveTabClass="three" switchType="Client"
+                   headerSpacing="10" value="{!'case'}">
+    	<apex:tab label="Contacts" labelWidth="200" id="con">
+            LastName	<br/>
+            FirstName	<br/>
+            <apex:iframe src="https://example.com"/>
+        </apex:tab>
+        <apex:tab label="Cases" labelWidth="200" id="case" >
+            Subject		<br/>
+            Priority	<br/>
+            <apex:iframe src="https://www.bing.com" scrolling="true"  />
+        </apex:tab>
+    </apex:tabPanel>
+    
+    
+</apex:page>

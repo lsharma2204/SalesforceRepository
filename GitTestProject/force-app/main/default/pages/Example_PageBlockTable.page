@@ -1,0 +1,22 @@
+<!--
+Author		:	Lakshaya Sharma
+Description	:	PageBlockTable with Standard Objects
+Version		:	1.0
+CreatedDate	:	06/06/2021
+-->
+<apex:page standardController="Account" showHeader="true" sidebar="true" rendered="true" recordSetVar="item"
+           readOnly="true">
+    <apex:sectionHeader title="Account" subtitle="Account List" help="/apex/HelpPage"/>
+    <apex:pageBlock id="pb1" title="Record List" dir="LTR" helpTitle="NeedHelp?" helpUrl="/apex/AccountHelp"
+                    mode="mainDetail" rendered="true" tabStyle="Opportunity">
+        
+			<apex:pageBlockTable value="{!item}" var="a" first="2" rows="3">
+            <apex:column value="{!a.Name}"/>
+            <apex:column value="{!a.Phone}"/>
+            <apex:column value="{!a.Industry}"/>
+            <apex:column value="{!a.Rating}"/>
+        </apex:pageBlockTable>        
+       
+    	
+    </apex:pageBlock>
+</apex:page>

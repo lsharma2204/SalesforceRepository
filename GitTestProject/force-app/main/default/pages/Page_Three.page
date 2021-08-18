@@ -1,0 +1,46 @@
+<!--
+Author		:	Lakshaya Sharma
+Description	:	Visualforce Basics
+Version		:	1.0
+CreatedDate	:	06/02/2021
+-->
+<apex:page standardController="Account" sidebar="true" showHeader="true">
+    <apex:sectionHeader title="Account" Subtitle="{!Account.Name}" help="/apex/PageHelp"/>
+    <apex:form >
+        
+    <apex:pageBlock id="pb1" title="{!Account.Name}" dir="LTR"
+                    helpTitle="Click here for Help" helpUrl="/apex/AccountHelp" tabStyle="Account" mode="InlineEdit">
+        <apex:pageBlockButtons dir="LTR" id="Pbb1" location="top">
+        	<apex:commandButton value="Save" action="{!save}"/>
+            <apex:commandButton value="Cancel" action="{!cancel}"/>
+            <apex:commandButton value="Edit" action="{!edit}"/>
+            <apex:commandButton value="Delete" action="{!delete}"/>
+            <apex:commandButton value="New" action="{!create}"/>
+            <apex:commandButton value="list" action="{!list}"/>
+            <apex:commandButton value="View" action="{!view}"/>
+        </apex:pageBlockButtons>
+        <apex:pageBlockSection id="pbs1" title="Basic Info Text" collapsible="true" columns="2" dir="LTR"
+                               showHeader="true" rendered="true">
+			<b>Account Name</b>	:{!Account.Name}<br/>
+            <b>Account Phone</b>:{!Account.Phone}<br/>
+            <b>Industry</b>		:{!Account.Industry}<br/>        
+        </apex:pageBlockSection>
+         <apex:pageBlockSection id="pbs2" title="Basic Info Using Input Field" collapsible="true" columns="2" dir="LTR"
+                               showHeader="true" rendered="true">
+			 <apex:inputField id="pbs2if1" required="true" value="{!Account.Name}" rendered="true"/>
+             <apex:inputField id="pbs2if2" rendered="true" value="{!Account.Phone}" required="true"/>
+             <apex:inputField id="pbs2if3" required="true" value="{!Account.Industry}" rendered="true"/>
+        </apex:pageBlockSection>
+        <apex:pageBlockSection id="pbs3" title="Basic Info Display : Output Field" collapsible="true" dir="LTR"
+                               columns="2" showHeader="true" rendered="true">
+            
+            <apex:outputField value="{!Account.Name}" rendered="true"/>
+            <apex:outputField value="{!Account.Phone}" rendered="true"/>
+        	<apex:outputField value="{!Account.Industry}" rendered="true"/>
+            
+        </apex:pageBlockSection>
+        
+    </apex:pageBlock>
+            
+        </apex:form>
+</apex:page>

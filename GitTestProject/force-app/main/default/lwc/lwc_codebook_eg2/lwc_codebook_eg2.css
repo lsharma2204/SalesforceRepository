@@ -1,0 +1,18 @@
+.card
+{
+    margin-top: 80px;
+    margin-left: 350px;
+    width: 600px;
+    height: 250px;
+    border: 5px solid red;
+    background-color: rgb(223, 220, 217);
+}
+.box
+{
+    margin-top: 80px;
+    margin-left: 350px;
+    width: 600px;
+    height: 80px;
+    border: 5px solid red;
+    background-color: rgb(223, 220, 217);
+}

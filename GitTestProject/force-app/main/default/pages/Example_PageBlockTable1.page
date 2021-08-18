@@ -1,0 +1,68 @@
+<!--
+Author			:	Lakshaya Sharma
+Description		:	Displaying Child Records using PageBlockTable
+Version			:	1.0
+CreatedDated	: 	06/06/2021
+-->
+<apex:page standardController="Account" sidebar="true" showHeader="true" readOnly="true" rendered="true">
+    <apex:sectionHeader title="Account" subtitle="{!Account.Name}" description="Displaying child records associated with a particular Account record"
+                        help="/apex/PageHelp"/>
+    <apex:form >
+    <apex:pageBlock id="pb1" title="Case Records" dir="LTR" helpTitle="needHelp?" helpUrl="/apex/CaseHelp" mode="mainDetail"
+                    rendered="true" tabStyle="Case">
+    	<apex:pageBlockTable value="{!Account.Cases}" var="a" >
+            <apex:column >
+            	<apex:facet name="header">
+                	<apex:inputCheckbox />
+                </apex:facet>
+                <apex:inputCheckbox />
+            </apex:column>
+        	<apex:column value="{!a.Subject}"/>
+            <apex:column value="{!a.Priority}"/>
+            <apex:column value="{!a.Status}" />
+            <apex:column value="{!a.Origin}"/>
+            <apex:column value="{!a.OwnerId}"/>
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+        </apex:form>
+    
+    <apex:sectionHeader title="Account" subtitle="{!Account.Name}" help="apex/PageHelp" rendered="true"
+                        description="Displaying Child records associated with Parent records using custom header name"/>
+    <apex:form >
+    <apex:pageBlock id="pb1" title="Case Records" dir="LTR" helpTitle="needHelp?" helpUrl="/apex/CaseHelp" mode="mainDetil"
+                    rendered="true">
+    	<apex:pageBlockTable value="{!Account.Cases}" var="a">
+            <apex:column dir="RTL">
+            <apex:facet name="footer">
+            	<apex:commandLink value="Click Me"/>
+            </apex:facet>
+                </apex:column>
+            <apex:column headerValue="Custom Subject">{!a.Subject}</apex:column>
+            <apex:column headerValue="Custom Priority">{!a.Priority}</apex:column>
+            <apex:column headerValue="Custom Status">{!a.Status}</apex:column>
+            <apex:column headerValue="Custom Owner Name">{!a.OwnerId}</apex:column>
+        </apex:pageBlockTable>
+    </apex:pageBlock>   
+        </apex:form>
+    <apex:sectionHeader title="{!Account.Name}" subtitle="Contacts" help="/apex/ContactHelp" rendered="true"/>
+    <apex:form id="fm">
+    	<apex:pageBlock id="pb1" title="{!Account.Name + ' Contacts'}" dir="LTR" mode="Detail" rendered="true">
+        	<apex:pageBlockButtons id="pbb1" dir="LTR" location="top" rendered="true">
+            	<apex:commandButton value="Update"/>
+                <apex:commandButton value="Delete"/>
+            </apex:pageBlockButtons>
+            <apex:pageBlockTable value="{!Account.Contacts}" var="a">
+                <apex:column >
+                	<apex:facet name="header">
+                    	<apex:inputCheckbox />
+                    </apex:facet>
+                    <apex:inputCheckbox />
+                </apex:column>
+            	<apex:column value="{!a.LastName}"/>
+                <apex:column value="{!a.FirstName}"/>
+                <apex:column value="{!a.Phone}"/>
+                <apex:column value="{!a.Email}"/>
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

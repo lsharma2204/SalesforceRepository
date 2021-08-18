@@ -1,0 +1,20 @@
+<template>
+    <lightning-layout multiple-rows="true" class="card">
+        <lightning-layout-item size="12" padding="around-small">
+            <b>Greater of 3 Numbers</b>
+            <lightning-input label="Enter First Number" type="number" onchange={fnum} name="one"></lightning-input>
+            <lightning-input label="Enter Second Number" type="number" onchange={fnum} name="two"></lightning-input>
+            <lightning-input label="Enter Third Number" type="number" onchange={fnum} name="three"></lightning-input>
+        </lightning-layout-item>
+        
+        <lightning-layout-item size="6" padding="around-small">   
+            <lightning-button label="Calculate" variant="Success" onclick={calculate}></lightning-button>
+        </lightning-layout-item>
+    </lightning-layout>
+    <br/>
+    <lightning-layout class="box">
+        <lightning-layout-item>
+            <b>Result : {res}</b>
+        </lightning-layout-item>
+    </lightning-layout>
+</template>

@@ -1,0 +1,26 @@
+<apex:page controller="ExampleCalculator" showHeader="true" sidebar="true" lightningStylesheets="false">
+    <apex:sectionHeader title="Example" subtitle="Calculator" help="/apex/Page.vfp"/>
+    <apex:form >
+    	<apex:pageBlock title="Example" id="pb1">
+            <apex:pageBlockButtons >
+            	<apex:commandButton value="Sum" action="{!sum}" reRender="pb1"/>
+                <apex:commandButton value="Mul" action="{!multiply}" reRender="pb1"/>
+                <apex:commandButton value="Cancel" action="{!clear}" reRender="pb1"/>
+            </apex:pageBlockButtons>
+        	<apex:pageBlockSection columns="1">
+            	<apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Enter A Val"/>
+                    <apex:inputText value="{!aval}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Enter B Val"/>
+                    <apex:inputText value="{!bval}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Result"/>
+                    <apex:inputText value="{!result}"/>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

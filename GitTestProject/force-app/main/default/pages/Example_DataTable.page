@@ -1,0 +1,23 @@
+<!--
+Author		:	Lakshaya Sharma
+Description	:	Outputing data using <apex:dataTable>
+Version		:	1.0
+CreatedDate	:	06/06/2021
+-->
+<apex:page standardController="Account" recordSetVar="items" showHeader="true" sidebar="true" rendered="true">
+    <style>
+    	.odd{
+        		background:pink;
+        	}
+        .even{
+        		background:grey;
+        	}
+    </style>
+    <apex:dataTable value="{!items}" var="a"  width="100%"  border="4" rules="rows" cellpadding="10"
+                    bgcolor="grey" rowClasses="odd,even">
+    	<apex:column value="{!a.Name}" headerValue="Name"/>
+        <apex:column value="{!a.Phone}" headerValue="Phone"/>
+        <apex:column value="{!a.Industry}" headerValue="Industry"/>
+        <apex:column value="{!a.Rating}" headerValue="Rating"/>
+    </apex:dataTable>
+</apex:page>

@@ -1,0 +1,19 @@
+<apex:page controller="ListExample1">
+    <apex:form >
+    	<apex:dataTable value="{!stList}" var="s" id="tb" cellpadding="10" cellspacing="10" width="1000" rules="rows" frame="border">
+            <apex:column headerValue="Name">
+            	<apex:inputText value="{!s.name}"/>
+            </apex:column>
+            <apex:column headerValue="Age">
+            	<apex:inputText value="{!s.age}"/>
+            </apex:column>
+            <apex:column headerValue="Phone">
+            	<apex:inputText value="{!s.phone}"/>
+            </apex:column>
+            <apex:column >
+            	<apex:commandButton value="Add" action="{!addMe}" reRender="tb"/>
+            </apex:column>
+        </apex:dataTable>
+        	
+    </apex:form>
+</apex:page>

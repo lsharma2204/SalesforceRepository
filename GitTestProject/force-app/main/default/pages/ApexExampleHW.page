@@ -1,0 +1,25 @@
+<apex:page controller="ApexExampleHW">
+    <apex:form >
+    	<apex:selectList value="{!selectVal}" multiselect="false">
+            <apex:selectOption itemLabel="Account" itemValue="acc"/>
+            <apex:selectOption itemLabel="Contact" itemValue="con"/>
+        </apex:selectList><p/>
+        <apex:commandButton value="{ClickMe}" action="{!renderMe}"/>
+        <apex:pageBlock title="Account" rendered="{!flag}" id="pb1">
+        	<apex:pageBlockSection >
+            	<apex:inputField value="{!acc.name}"/>
+                <apex:inputField value="{!acc.phone}"/>
+                <apex:inputField value="{!acc.industry}"/>
+                <apex:inputField value="{!acc.rating}"/>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+        <apex:pageBlock title="Contact" rendered="{!flag1}" id="pb2">
+        	<apex:pageBlockSection >
+            	<apex:inputField value="{!con.lastName}"/>
+                <apex:inputField value="{!con.firstName}"/>
+                <apex:inputField value="{!con.phone}"/>
+                <apex:inputField value="{!con.email}"/>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

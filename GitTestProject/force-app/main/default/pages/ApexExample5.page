@@ -1,0 +1,16 @@
+<apex:page controller="ApexExample5">
+    <apex:sectionHeader title="New Account" subtitle="New Account"/>
+    <apex:form >
+        <apex:pageMessages />
+    	<apex:pageBlock title="Account">
+        	<apex:pageBlockButtons >
+            	<apex:commandButton value="Create" action="{!create}"/>
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection >
+            	<apex:inputField value="{!acc.Name}"/>
+                <apex:inputField value="{!acc.Phone}"/>
+                <apex:inputField value="{!acc.Industry}"/>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

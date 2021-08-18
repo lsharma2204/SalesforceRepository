@@ -1,0 +1,45 @@
+<!--
+Author		:	Lakshaya Sharma
+Version		:	1.0
+CreatedDate	:	28/06/2021
+-->
+<apex:page controller="Sobject_Opportunity_Example" showHeader="true" sidebar="true">
+    <apex:sectionHeader title="Opportuntiy" subtitle="New Opportunity" help="/apex/pageHelp" rendered="true"/>
+    <apex:pageMessages />
+    <apex:form id="fm1">
+        <apex:pageBlock title="Opportunity" id="pb1" helpTitle="needHelp?" helpUrl="apex/pgeHelp"
+                        mode="inlineEdit" rendered="true" tabStyle="Contact">
+        	<apex:pageBlockButtons dir="LTR" location="top">
+            	<apex:commandButton value="Save" action="{!create}" dir="LTR" disabled="false"/>
+                <apex:commandButton value="Cancel" action="{!clear}" dir="LTR" disabled="false"/>
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection id="pbs1">
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Name" />
+                    <apex:inputText value="{!opp.Name}"/>
+                </apex:pageBlockSectionItem>
+                    
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="StageName"/>
+                    <apex:inputText value="{!opp.StageName}"/>
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Amount"/>
+                    <apex:inputText value="{!opp.Amount}"/>
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Type"/>
+                    <apex:inputText value="{!opp.Type}"/>
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Closedate"/>
+                    <apex:inputField value="{!opp.CloseDate}"/>
+                </apex:pageBlockSectionItem>
+                
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

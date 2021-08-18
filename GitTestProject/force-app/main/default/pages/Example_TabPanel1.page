@@ -1,0 +1,89 @@
+<!--
+Author		:	Lakshaya Sharma
+Description	:	showing Related List in different tabs
+Version		:	1.0
+CreatedDate	:	06/06/2021
+-->
+<apex:page standardController="Account" sidebar="true" showHeader="true" rendered="true">
+    <style>
+    	.one{
+        		background:white;
+        		
+        	}
+        .two{
+        		background:grey;
+        		color:black;
+        	}
+        .three{
+        			background:white;
+        			color:black;
+        		}
+    </style>
+    <apex:sectionHeader title="{!Account.Name}" subtitle="Account" help="/apex/helpMe" rendered="true"/>
+    <apex:form >
+        <apex:pageBlock id="pb1" title="Account Detail" dir="LTR" helpTitle="needHelp?" helpUrl="/apex/AccountHelp"
+                        mode="InlineEdit" rendered="true">
+            <apex:pageBlockButtons dir="LTR" location="top">
+                <apex:commandButton value="Save" action="{!save}"/>
+                <apex:commandButton value="Edit" action="{!edit}"/>
+                <apex:commandButton value="Delete" action="{!delete}"/>
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection collapsible="false" dir="LTR" id="pbs1" rendered="true">
+            	<apex:outputField value="{!Account.Name}"/>
+                <apex:outputField value="{!Account.Phone}"/>
+                <apex:outputField value="{!Account.Industry}"/>
+                <apex:outputField value="{!Account.Rating}"/>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+        <div id="panel1">
+            
+        <apex:tabPanel id="tp1" headerClass="one" activeTabClass="two" inactiveTabClass="" rendered="true" switchType="Client">
+        	<apex:tab id="tb1" label="Contacts" labelWidth="20" reRender="panel1">
+            	<apex:pageBlock title="Contacts" rendered="true">
+                	<apex:pageBlockTable value="{!Account.Contacts}" var="a">
+                    	<apex:column >
+                        	<apex:facet name="header">
+                            	<apex:inputCheckbox />
+                            </apex:facet>
+                            <apex:inputCheckbox />
+                        </apex:column>
+                        <apex:column value="{!a.LastName}"/>
+                        <apex:column value="{!a.FirstName}"/>
+                        <apex:column value="{!a.Email}"/>
+                    </apex:pageBlockTable>
+                </apex:pageBlock>
+            </apex:tab>
+            <apex:tab id="tb2" label="Opportunities" labelWidth="20" reRender="panel1">
+            	<apex:pageBlock title="Opportunities" rendered="true">
+                	<apex:pageBlockTable value="{!Account.Opportunities}" var="a">
+                    	<apex:column >
+                        	<apex:facet name="header">
+                            	<apex:inputCheckbox />
+                            </apex:facet>
+                            <apex:inputCheckbox />
+                        </apex:column>
+                        <apex:column value="{!a.Name}"/>
+                        <apex:column value="{!a.Amount}"/>
+                        <apex:column value="{!a.StageName}"/>
+                    </apex:pageBlockTable>
+                </apex:pageBlock>
+            </apex:tab>
+            <apex:tab id="tb3" label="Cases" labelWidth="20" reRender="panel1">
+            	<apex:pageBlock title="Cases" rendered="true">
+                	<apex:pageBlockTable value="{!Account.Cases}" var="a">
+                    	<apex:column >
+                        	<apex:facet name="header">
+                            	<apex:inputCheckbox />
+                            </apex:facet>
+                            <apex:inputCheckbox />
+                        </apex:column>
+                        <apex:column value="{!a.Subject}"/>
+                        <apex:column value="{!a.Priority}"/>
+                        <apex:column value="{!a.OwnerId}"/>
+                    </apex:pageBlockTable>
+                </apex:pageBlock>
+            </apex:tab>
+        </apex:tabPanel>
+            </div>
+    </apex:form>
+</apex:page>

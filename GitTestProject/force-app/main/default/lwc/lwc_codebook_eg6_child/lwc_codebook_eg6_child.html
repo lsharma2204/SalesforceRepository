@@ -1,0 +1,10 @@
+<template>
+    <lightning-card title="Display Employee Details using Event with Programatically">
+        <lightning-input label="Employee Name" type="text" onchange={empname}></lightning-input>
+        <lightning-input label="Employee Age" type="number" onchange={empage}></lightning-input>
+        <lightning-input label="Employee Phone" type="text" onchange={empphone}></lightning-input>
+        <lightning-input label="Employee City" type="text" onchange={empcity}></lightning-input>
+
+        <lightning-button label="Submit" onclick={submit} variant="Success"></lightning-button>
+    </lightning-card>
+</template>

@@ -1,0 +1,19 @@
+<apex:page controller="SOQL_Example_4">
+    <apex:form >
+    	<apex:inputText value="{!searchText}"/>
+        <apex:commandButton value="Search" action="{!search}" />
+        <br/> <br/>
+        
+        
+            
+        
+        <apex:pageBlock title="Searched Result" id="pb" rendered="{! !ISNULL(accList)}">
+        	<apex:pageBlockTable value="{!accList}" var="acc">
+            	<apex:column value="{!acc.Name}"/>
+                <apex:column value="{!acc.Phone}"/>
+                <apex:column value="{!acc.Industry}"/>
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+        
+    </apex:form>
+</apex:page>

@@ -1,0 +1,24 @@
+<!--
+Author		:	Lakshaya Sharma
+Description	:	Visualforce page for Contact Edit
+Version		:	1.0
+CreatedDate	:	02/06/2021
+-->
+<apex:page standardController="Contact" showHeader="true" sidebar="true">
+    <apex:sectionHeader title="Contact" subtitle="New Contact" help="/apex/ContactHelp"/>
+    <apex:form >
+    <apex:pageBlock id="pb1" title="Contact Edit" dir="LTR" helpTitle="needHelp?" helpUrl="/apex/ContactHelp"
+                    mode="Edit" tabStyle="Contact">
+        <apex:pageBlockButtons dir="LTR" location="top" id="pbb1">
+        	<apex:commandButton value="Save" reRender="pb1" action="{!save}"/>
+            <apex:commandButton value="Cancel" reRender="pb1" action="{!cancel}"/>
+        </apex:pageBlockButtons>
+    	<apex:pageBlockSection id="pb1s1" title="Basic Informatio" dir="LTR" columns="2" rendered="true" >
+        	<apex:inputField value="{!Contact.LastName}" required="true"/>
+            <apex:inputField value="{!Contact.FirstName}"/>
+            <apex:inputField value="{!Contact.Email}"/>
+            <apex:inputField value="{!Contact.AccountId}"/>
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+        </apex:form>
+</apex:page>

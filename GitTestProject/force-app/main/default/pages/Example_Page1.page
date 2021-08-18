@@ -1,0 +1,21 @@
+<!--
+Author		:	Lakshaya
+Description	:	Satish Example
+Version		:	1.0
+CreatedDate	:	06/02/2021
+-->
+<apex:page showHeader="true" sidebar="true">
+    <apex:sectionHeader title="Student" subtitle="New Student" help="/apex/PageHelp"/>
+    <apex:form >
+    <apex:pageBlock id="pb1" title="Student" helpTitle="needHelp?" helpUrl="/apex/StudentHelp"
+                    dir="LTR" mode="Detail" tabStyle="Opportunity">
+        <apex:pageBlockButtons dir="LTR" location="bottom" rendered="true">
+            <apex:commandButton value="Save" rerender="pb1"/>
+            <apex:commandButton value="Cancel" reRender="pb1"/>
+        </apex:pageBlockButtons>
+        <b>Last Name</b>	:	<br/>
+        <b>First Name</b>	:	<br/>
+        <b>Phone</b>		:	<br/>
+    </apex:pageBlock>
+        </apex:form>
+</apex:page>

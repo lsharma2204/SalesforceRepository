@@ -1,0 +1,13 @@
+<apex:page controller="ListExample2">
+    <apex:form >
+    	<apex:dataTable value="{!accD}" var="a" cellpadding="10" cellspacing="10" rules="rows" frame="border" width="1000">
+        	<apex:column >
+                <apex:inputCheckbox value="{!a.flag}"/>
+            </apex:column>
+            <apex:column value="{!a.name}" headerValue="Name"/>
+            <apex:column value="{!a.phone}" headerValue="Phone"/>
+            <apex:column value="{!a.industry}" headerValue="Industry"/>
+            <apex:column value="{!a.amount}" headerValue="Amount"/>
+        </apex:dataTable>
+    </apex:form>
+</apex:page>

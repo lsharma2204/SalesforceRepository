@@ -1,0 +1,27 @@
+<apex:page controller="SOQL_Example_5">
+    <apex:form >
+    	<apex:pageBlock title="Query Parameters">
+            <apex:pageBlockButtons location="top" dir="LTR"> 
+            	<apex:commandButton value="Search" action="{!searchAccount}"/>
+            </apex:pageBlockButtons>
+        	<apex:pageBlockSection >
+            	<apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Account Name : " />
+                    <apex:inputText value="{!accName}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Account Rating : "/>
+                    <apex:inputText value="{!accRating}"/>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+        
+        <apex:pageBlock title="Result" rendered="{! !ISNULL(accList)}">
+        	<apex:pageBlockTable value="{!accList}" var="a">
+            	<apex:column value="{!a.Name}"/>
+                <apex:column value="{!a.Phone}"/>
+                <apex:column value="{!a.Industry}"/>
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

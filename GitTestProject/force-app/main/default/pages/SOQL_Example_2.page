@@ -1,0 +1,23 @@
+<apex:page controller="SOQL_Example_2">
+    <apex:form >
+    <apex:pageBlock title="Click on one of the given buttons to see the result">
+        <apex:commandButton value="All Data" action="{!allData}"/> <br/> <br/>
+        <apex:commandButton value="Limit Data" action="{!limitData}" reRender="pb2"/> <br/> <br/>
+        <apex:outputText value="Enter Integer value : " /> &nbsp;
+        	<apex:inputText value="{!count}"/> &nbsp;
+        <apex:commandButton value="Set Limit" action="{!setLimit}" reRender="pb2"/> <br/>
+        <apex:commandButton value="Set Offset" action="{!setOffset}" reRender="pb2"/> <br/>
+        <apex:commandButton value="Sort Ascending" action="{!nameAsc}" reRender="pb2"/> <br/>
+        <apex:commandButton value="Sort Descending" action="{!nameDesc}" reRender="pb2"/>
+    </apex:pageBlock>
+        <br/>
+    <apex:pageBlock title="Result" id="pb2" rendered="{!flag}">
+    	<apex:pageBlockTable value="{!acc}" var="a">
+        	<apex:column value="{!a.Name}" headerValue="Name"/>
+            <apex:column value="{!a.Phone}" headerValue="Phone"/>
+            <apex:column value="{!a.Industry}" headerValue="Industry"/>
+            <apex:column value="{!a.Rating}" headerValue="Rating"/>
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+        </apex:form>
+</apex:page>

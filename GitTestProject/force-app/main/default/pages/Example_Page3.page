@@ -1,0 +1,30 @@
+<!--
+Author		:	Lakshaya
+Description	:	Visualforce showing Account Details
+Version		:	1.0
+CreatedDate	:	02/06/2021
+-->
+<apex:page standardController="Account" showHeader="true" sidebar="true">
+    <apex:sectionHeader title="Account" subtitle="{!Account.Name}" help="/apex/PageHelp"/>
+    <apex:form >
+        <apex:pageBlock id="pb1" title="{!Account.Name}" dir="LTR" helpTitle="needHelp?" helpUrl="/apex/AccountHelp"
+                        rendered="true" tabStyle="Opportunity">
+            <apex:pageBlockButtons dir="LTR" location="top">
+            	<apex:commandButton value="Edit" action="{!edit}"/>
+                <apex:commandButton value="Delete" action="{!delete}"/>
+            </apex:pageBlockButtons>
+            <apex:inlineEditSupport >
+            <apex:pageBlockSection id="pbs1" collapsible="true" dir="LTR" columns="2" rendered="true"
+                                   showHeader="true">
+                <apex:outputField value="{!Account.Name}" />
+            <apex:outputField value="{!Account.Industry}"/>
+            <apex:outputField value="{!Account.Phone}"/>
+            <apex:outputField value="{!Account.Rating}"/>
+            <apex:outputField value="{!Account.Type}"/>
+            <apex:outputField value="{!Account.Ownership}"/>
+                </apex:pageBlockSection>
+                </apex:inlineEditSupport>
+            
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

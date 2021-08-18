@@ -1,0 +1,46 @@
+<!--
+Author		:	Lakshaya Sharma
+Description	:	Showing Account, Contcts and Opportunities in Tabs
+Version		:	1.0
+CreatedDate	:	06/06/2021
+-->
+<apex:page standardController="Account">
+    <apex:form >
+    <apex:tabPanel id="tp1" dir="LTR" switchType="Client">
+    	<apex:tab label="Account" labelWidth="20">
+            <apex:sectionHeader title="Account" subtitle="{!Account.Name}" help="/apex/PageHelp"/>
+        	<apex:pageBlock id="pb1" title="Account Detail" mode="InlineEdit" rendered="true"> 
+            	<apex:pageBlockButtons dir="LTR" location="top">
+                	<apex:commandButton value="Edit" action="{!edit}"/>
+                    <apex:commandButton value="Save" action="{!save}"/>
+                    <apex:commandButton value="Delete" action="{!delete}"/>
+                </apex:pageBlockButtons>
+                <apex:pageBlockSection id="pbs1" title="General Information" dir="LTR" collapsible="false"
+                                       rendered="true" showHeader="true">
+                	<apex:outputField value="{!Account.Name}"/>
+                    <apex:outputField value="{!Account.Phone}"/>
+                    <apex:outputField value="{!Account.Industry}"/>
+                    <apex:outputField value="{!Account.Rating}"/>
+                </apex:pageBlockSection>
+            </apex:pageBlock>
+        </apex:tab>
+        
+        <apex:tab id="tb2" label="Contacts" labelWidth="20" rendered="true">
+           <apex:dataTable value="{!Account.Contacts}" var="a" border="4" cellpadding="10" dir="LTR"
+                            frame="border" rules="rows" width="100%">
+            	<apex:column value="{!a.Name}" headerValue="Name"/>
+                <apex:column value="{!a.Phone}" headerValue="Phone"/>
+                <apex:column value="{!a.Email}" headerValue="Email"/>
+            </apex:dataTable>
+        </apex:tab>
+        
+        <apex:tab id="tb3" label="Opportunities" labelWidth="20" rendered="true">
+        	<apex:dataTable value="{!Account.Opportunities}" var="a" cellpadding="10" border="4" frame="border"
+                            bgcolor="pink" rules="rows" width="100%">
+            	<apex:column value="{!a.Name}" headerValue="Name"/>
+                <apex:column value="{!a.Amount}" headerValue="Amount"/>
+            </apex:dataTable>
+        </apex:tab>
+    </apex:tabPanel>
+    </apex:form>
+</apex:page>

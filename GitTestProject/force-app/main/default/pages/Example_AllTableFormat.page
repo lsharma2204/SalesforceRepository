@@ -1,0 +1,68 @@
+<!--
+Author		:	Lakshaya Sharma
+Description	:	Displaying List view for Account Object using all the Table elements (PageBlockTable, DataTable, DataList, Repeat)
+Version		:	1.0
+CreatedDate	:	06/06/2021
+-->
+<apex:page standardController="Account" recordSetVar="items" showHeader="true" sidebar="true" rendered="true">
+    <apex:form >
+    	<apex:tabPanel id="tp" width="100%" switchType="Client">
+        	<apex:tab id="tb1" label="PageBlockTable" labelWidth="20" rendered="true">
+            	<apex:pageBlock id="pb1" title="Account Records" mode="Detail">
+                	<apex:pageBlockTable value="{!items}" var="a">
+                    	<apex:column value="{!a.Name}"/>
+                        <apex:column >
+                        <apex:dataTable value="{!a.Contacts}" var="con">
+                            <apex:column value="{!con.Name}"/>
+                        </apex:dataTable>
+                            </apex:column>
+                    </apex:pageBlockTable>
+                </apex:pageBlock>
+            </apex:tab>
+            
+            <apex:tab id="tb2" label="DataTable" labelWidth="20" rendered="true">
+            	<apex:pageBlock id="pb2" title="Account Detail" dir="LTR" rendered="true" mode="Detail">
+                	<apex:dataTable value="{!items}" var="a" bgcolor="pink" border="5" frame="border"
+                                    rules="rows" cellpadding="10" width="100%">
+                    	 <apex:column value="{!a.Name}" headerValue="Account Name"/>
+                        <apex:column value="{!a.Industry}" headerValue="Account Industry"/>
+                        <apex:column headerValue="Contact Name">
+                        	<table>
+                                <apex:repeat value="{!a.contacts}" var="con">
+                                	<tr>
+                                    	<td>{!con.Name}</td>
+                                        
+                                    </tr>
+                                </apex:repeat>
+                            </table>
+                        </apex:column>
+                        <apex:column headerValue="Contact Lead Source">
+                        	<apex:dataTable value="{!a.contacts}" var="con">
+                            	<apex:column value="{!con.LeadSource}"/>
+                            </apex:dataTable>
+                        </apex:column>
+                        
+                    </apex:dataTable>
+                </apex:pageBlock>
+            </apex:tab>
+            
+            <apex:tab id="tb3" label="DataList" labelWidth="20" rendered="true">
+            	<apex:pageBlock id="pb3" title="Account Detail" dir="LTR" rendered="true" mode="Detail">
+					<apex:dataList value="{!items}" var="a">
+                       <b>Account Name</b>: {!a.Name}	<br/>
+                        <b>Account Industry</b>: {!a.Industry}	<br/> <br/>
+                    </apex:dataList>
+                </apex:pageBlock>
+            </apex:tab>
+            
+            <apex:tab id="tb4" label="Repeat" labelWidth="20" rendered="true">
+            	<apex:pageBlock id="pb4" title="Account Detail" dir="LTR" rendered="true" mode="Detail">
+					<apex:repeat value="{!items}" var="a">
+                        {!a.name}	<br/>
+                        {!a.Industry} <br/><br/>
+                    </apex:repeat>
+                </apex:pageBlock>
+            </apex:tab>
+        </apex:tabPanel>
+    </apex:form>
+</apex:page>

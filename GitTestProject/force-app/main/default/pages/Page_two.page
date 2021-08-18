@@ -1,0 +1,77 @@
+<!--
+Author		:	Lakshaya Sharma
+Description	:	Vf module
+Version		:	1.0
+CreatedDate	:	06/02/2021
+-->
+<apex:page showHeader="true" sidebar="true">
+    <apex:sectionHeader title="Account" subtitle="New Account" help="/apex/Page_One" rendered="true" description="Learning different tags of Visualforce"/>
+    <apex:form id="fm">
+    <apex:pageBlock title="Detail Page Block" dir="LTR" helpTitle="Click for external refrences"
+                    helpUrl="https://www.facebook.com" id="pb1" mode="Detail" rendered="true"
+                    tabStyle="Opportunity">
+        <apex:pageBlockButtons dir="LTR" id="pbb1" location="both" rendered="true">
+            <apex:commandButton value="Save" action="/apex/Page_One" title="cursor tip" disabled="false"/>
+            <apex:commandButton value="cancel" action="https://www.twitter.com" rendered="true"/>
+        </apex:pageBlockButtons>
+        <apex:pageBlockSection id="pb1s1" title="General Information" collapsible="false" columns="2" dir="LTR"
+                             rendered="true" showHeader="true"  > 
+            <b>First Name</b>	:	<br/>
+            <b>Last Name</b>	:	<br/>
+            <b>Phone</b>		:	<br/>
+            <b>Industry</b>		:	<br/>
+        </apex:pageBlockSection>
+        <apex:pageBlockSection id="pb1s2" title="Account Information" columns="1" dir="LTR" collapsible="true"
+                               showHeader="true" rendered="true" >
+            <b>Bank Name</b>	:	<br/>
+            <b>AccountNumber</b>:	<br/>
+            <b>IFSC</b>			:	<br/>
+            <b>CreatedDate</b>	:	<br/>
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+    <apex:pageBlock title="mainDetail Page Block" dir="LTR" helpTitle="Click for external refrences"
+                    helpUrl="https://www.salesforce.com" id="pb2" mode="mainDetail" rendered="true"
+                    tabStyle="Account">
+        <apex:pageBlockButtons location="top" dir="LTR" id="pbb2" rendered="true">
+            <apex:commandButton value="Save" action="/apex/PageOne" disabled="true" title="Save Button" rendered="true"/>
+            <apex:commandButton value="Cancel" action="https:www.google.com" disabled="false" title="Cancel Button" dir="LTR"/>
+        </apex:pageBlockButtons>
+        <apex:pageBlockSection id="pb2s1" title="Gneral Information" collapsible="false" columns="2"
+                               dir="LTR" showHeader="false" rendered="true">
+        	<b>First Name</b>	:	<br/>
+            <b>Last Name</b>	:	<br/>
+            <b>Phone</b>		:	<br/>
+            <b>Industry</b>		:	<br/>
+        </apex:pageBlockSection>
+        <apex:pageBlockSection id="pb2s2" title="Account Information" collapsible="true" dir="LTR"
+                               columns="2" rendered="true" showHeader="true">
+            <b>Bank Name</b>		:	<br/>
+            <b>IFSC Code</b>		:	<br/>
+            <b>AccountNumbe</b>		:	<br/>
+            <b>CreatedDate</b>		:	<br/>
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+    <apex:pageBlock title="Edit Page Block" dir="LTR" helpTitle="Click for external refrences"
+                    helpUrl="https://www.linkdin.com" id="pb3" mode="Edit" rendered="true"
+                    tabStyle="Contact">
+        <apex:pageBlockButtons id="pbb3" location="bottom" dir="LTR" rendered="true">
+        	SaveAll &nbsp; &nbsp; CancelAll
+        </apex:pageBlockButtons>
+        <b>First Name</b>	:	<br/>
+        <b>Last Name</b>	:	<br/>
+        <b>Phone</b>		:	<br/>
+        <b>Industry</b>		:	<br/>
+    </apex:pageBlock>
+    <apex:pageBlock title="InlineEdit Page Block" dir="LTR" helpTitle="Click for external refrences"
+                    helpUrl="/apex/Page_One" id="pb4" mode="InlineEdit" rendered="true"
+                    tabStyle="Case">
+        <apex:pageBlockButtons id="pbb4" location="both" dir="LTR" rendered="true">
+        	Saving &nbsp; &nbsp; Cancelling
+        </apex:pageBlockButtons>
+        <b>First Name</b>	:	<br/>
+        <b>Last Name</b>	:	<br/>
+        <b>Phone</b>		:	<br/>
+        <b>Industry</b>		:	<br/>
+    </apex:pageBlock>
+        </apex:form>
+</apex:page>

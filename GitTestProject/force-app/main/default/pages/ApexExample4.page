@@ -1,0 +1,29 @@
+<apex:page controller="ApexExample4">
+    <apex:sectionHeader title="Account" subtitle="Account Creation Page"/>
+    <apex:form >
+        <apex:pageMessages />
+    	<apex:pageBlock >
+            <apex:pageBlockButtons location="top">
+            	<apex:commandButton value="Create" action="{!create}"/>
+            </apex:pageBlockButtons>
+        	<apex:pageBlockSection >
+            	<apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Enter Name"/>
+                    <apex:inputText value="{!name}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Enter Phone"/>
+                    <apex:inputText value="{!phone}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Enter Rating"/>
+                    <apex:inputText value="{!rating}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Enter Industry"/>
+                    <apex:inputText value="{!industry}"/>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

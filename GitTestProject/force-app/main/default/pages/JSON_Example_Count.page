@@ -1,0 +1,16 @@
+<apex:page controller="JSON_Example_Apex_Count">
+    <apex:sectionHeader title="Account" subtitle="Search"/>
+    <apex:form >
+    	<apex:pageBlock title="Account Search">
+        	<apex:pageBlockButtons location="top">
+            	<apex:commandButton value="Search" action="{!search}"/>
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection title="Block is used to Enter search string">
+                <apex:outputLabel value="Enter Search Text"/>	<br/>
+                <apex:inputText value="{!searchtext}"/>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+        <br/>
+        {!result}
+    </apex:form>
+</apex:page>

@@ -1,0 +1,39 @@
+<apex:page controller="Demo1" sidebar="true" showHeader="true">
+    <apex:sectionHeader title="Show Picklist" subtitle="Use Controller"/>
+    <apex:form id="fm">
+    	<apex:pageBlock id="pb1" title="Different Select Options" mode="Detail" rendered="true"> 
+            <apex:pageBlockSection title="Picklist Select" id="pbs1">
+            	<apex:selectList dir="LTR" disabled="false" multiselect="false" size="1" value="{!selected}">
+                <apex:selectOption itemLabel="--None--" itemValue="none" />
+                <apex:selectOption itemLabel="Hyd" itemValue="TG"/>
+                <apex:selectOption itemLabel="Ban" itemValue="KA"/>
+            	</apex:selectList>
+                <apex:commandButton value="GO" reRender="pbs1"/> {!selected}
+            </apex:pageBlockSection>
+            
+            <apex:pageBlockSection title="Radio Select" id="pbs2">
+            	<apex:selectRadio dir="LTR" value="{!selected1}">
+                	<apex:selectOption itemLabel="--None--" itemValue="none" />
+                	<apex:selectOption itemLabel="Hyd" itemValue="TG"/>
+                	<apex:selectOption itemLabel="Ban" itemValue="KA"/>
+                </apex:selectRadio>
+                <apex:commandButton value="GO" reRender="pbs2"/> {!selected1}
+            </apex:pageBlockSection>
+            
+      		<apex:pageBlockSection title="Checkbox Select" id="pbs3">
+                <apex:selectCheckboxes dir="LTR" value="{!selected2}">
+                    <apex:selectOption itemLabel="--None--" itemValue="none" />
+                	<apex:selectOption itemLabel="Hyd" itemValue="TG"/>
+                	<apex:selectOption itemLabel="Ban" itemValue="KA"/>
+                </apex:selectCheckboxes>
+                <apex:commandButton value="GO" reRender="pbs3" /> 
+                <apex:repeat value="{!selected2}" var="s">
+                	{!s}
+                </apex:repeat>
+                    
+            </apex:pageBlockSection>
+            
+        </apex:pageBlock>
+        
+    </apex:form>
+</apex:page>

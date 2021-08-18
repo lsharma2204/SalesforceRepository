@@ -1,0 +1,47 @@
+<apex:page controller="Apex_SObjectPicklist">
+    <apex:form id="fm1">
+    	<apex:selectList size="1" value="{!selected}">
+            <apex:selectOption itemLabel="None" itemValue="none"/>
+            <apex:selectOption itemLabel="Account" itemValue="account"/>
+            <apex:selectOption itemLabel="Contact" itemValue="contact"/>
+        </apex:selectList>
+        <apex:commandButton value="Submit" action="{!selectedPicklist}"/>
+    </apex:form>
+    <apex:form id="fm2" rendered="{!flag1}">
+    	<apex:pageBlock title="Account Creation">
+        	<apex:pageBlockSection >
+            	<apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Name"/>
+                    <apex:inputText value="{!name}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Phone"/>
+                    <apex:inputText value="{!phone}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Industry"/>
+                    <apex:inputText value="{!industry}"/>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+    
+     <apex:form id="fm3" rendered="{!flag2}">
+    	<apex:pageBlock title="Contact Creation">
+        	<apex:pageBlockSection >
+            	<apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Last Name"/>
+                    <apex:inputText value="{!lname}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="First Name"/>
+                    <apex:inputText value="{!fname}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Email"/>
+                    <apex:inputText value="{!email}"/>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

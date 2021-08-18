@@ -1,0 +1,9 @@
+<apex:page controller="TestClass">
+    <apex:form >
+    	<apex:commandButton value="Create" action="{!create}"/>
+        <apex:repeat value="{!acc}" var="a">
+    	{!a}
+    </apex:repeat>
+    </apex:form>
+    
+</apex:page>

@@ -1,0 +1,33 @@
+<apex:page controller="Apex_InterestCalculator">
+    <apex:sectionHeader title="ICICI" subtitle="Interest Calculator"/>
+    <apex:form id="fm">
+    	<apex:pageBlock id="pb1" title="Calculator" dir="LTR" rendered="true" mode="mainDetail">
+        	<apex:pageBlockButtons dir="LTR" location="top">
+            	<apex:commandButton value="Calculate" action="{!calculate}" reRender="pb1"/>
+                <apex:commandButton value="Clear" action="{!reset}" reRender="pb1"/>
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection id="pbs1" title="Simple Interest Calculator" collapsible="false"
+                                   columns="1" dir="LTR" showHeader="true">
+            	<apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Amount" /> 
+                    <apex:inputText value="{!amount}"/>
+                </apex:pageBlockSectionItem>
+                	
+                <apex:pageBlockSectionItem >
+                	<apex:outputLabel value="Year"/> 
+                    <apex:inputText value="{!year}"/>
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem >
+                	<apex:outputLabel value="Rate"/> 
+                    <apex:inputText value="{!rate}"/>
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem >
+                	<apex:outputLabel value="Intereset"/> {!interest}
+                    
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

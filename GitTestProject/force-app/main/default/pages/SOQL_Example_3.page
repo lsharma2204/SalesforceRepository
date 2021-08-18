@@ -1,0 +1,30 @@
+<apex:page controller="SOQL_Example_3">
+    <apex:form >
+    	<apex:selectList multiselect="true" value="{!selected}" style="height:250px;width:250px"> 
+            <apex:selectOptions value="{!fields}"/>
+        </apex:selectList>
+        &nbsp;
+        <apex:commandButton value="Create" action="{!create}"/>
+        &nbsp;
+        <apex:inputTextarea value="{!query}" cols="90" rows="20"/>
+        &nbsp;
+        <apex:commandButton value="Submit" action="{!submit}" />
+        {!idVal}
+        <br/>
+       
+        
+        <apex:dataTable value="{!alist}" var="al">
+        	<apex:repeat value="{!selected}" var="s">
+        			<apex:column value="{!al[s]}" />
+        		</apex:repeat>
+        </apex:dataTable> 
+               
+      `
+                
+            
+
+        
+        	
+       
+    </apex:form>
+</apex:page>

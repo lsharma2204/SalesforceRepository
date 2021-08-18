@@ -1,0 +1,9 @@
+<apex:page controller="SOQL_Example_1" showHeader="true" sidebar="true">
+    <apex:pageBlock title="SOQL Query">
+    	<apex:pageBlockTable value="{!acc}" var="a">
+        	<apex:column value="{!a.Name}" headerValue="Account Name"/>
+            <apex:column value="{!a.Phone}" headerValue="Account Phone"/>
+            <apex:column value="{!a.Industry}" headerValue="Account Industry"/>
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+</apex:page>

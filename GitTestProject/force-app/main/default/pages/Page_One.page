@@ -1,0 +1,11 @@
+<!--
+Author		:	Lakshaya Sharma
+Description	:	Beginning of VF module
+Version		:	1.0
+CreatedDate	:	06/02/2021
+-->
+
+<apex:page sidebar="false" showHeader="true" setup="false" rendered="true">
+    Hi, <b>Welcome to VF World !</b> <br/>
+    This is Page One. Let's start exploring. 
+</apex:page>

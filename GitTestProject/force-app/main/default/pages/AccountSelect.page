@@ -1,0 +1,24 @@
+<apex:page controller="AccountSelectController">
+    <apex:form >
+    	<apex:pageBlock >
+            <apex:pageBlockButtons >
+            	<apex:commandButton value="Submit" action="{!submit}"/>
+            </apex:pageBlockButtons>
+        	<apex:pageBlockSection >
+            	<apex:pageBlockTable value="{!wrapAccountList}" var="w">
+                    <apex:column >
+                    	<apex:inputCheckbox value="{!w.selected}"/>
+                    </apex:column>
+                    <apex:column value="{!w.acc.Name}"/>
+                    <apex:column value="{!w.acc.Phone}"/>
+                    <apex:column value="{!w.acc.Industry}"/>
+                </apex:pageBlockTable>
+                <apex:pageBlockTable value="{!wrap}" var="wr" id="pt1">
+                	<apex:column value="{!wr.acc.Name}"/>
+                    <apex:column value="{!wr.acc.Phone}"/>
+                    <apex:column value="{!wr.acc.Industry}"/>
+                </apex:pageBlockTable>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

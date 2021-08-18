@@ -1,0 +1,21 @@
+<apex:page controller="AccountCollector">
+    <apex:form >
+    	<apex:pageBlock >
+        	<apex:pageBlockButtons location="top">
+            	<apex:commandButton value="Save" action="{!saveMe}" reRender="pbs2"/>
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection >
+            	<apex:inputField value="{!a.Name}"/>
+                <apex:inputField value="{!a.Phone}"/>
+                <apex:inputField value="{!a.Industry}"/>
+                <apex:inputField value="{!a.Rating}"/>
+            </apex:pageBlockSection>
+            <apex:pageBlockTable value="{!ac}" var="a1" id="pbs2"> 
+            	<apex:column value="{!a1.Name}" headerValue="Name"/>
+                <apex:column value="{!a1.Phone}" headerValue="Phone"/>
+                <apex:column value="{!a1.Industry}" headerValue="Industry"/>
+                <apex:column value="{!a1.Rating}" headerValue="Rating"/>
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

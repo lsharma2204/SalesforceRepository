@@ -1,0 +1,44 @@
+<!--
+Author		:
+Description	:
+Version		:
+CreatedDate	:
+-->
+<apex:page controller="Demo">
+    <apex:sectionHeader title="InputText"/>
+    <apex:form >
+        <apex:inputText dir="LTR" />	<br/>
+        <apex:inputTextarea cols="30" rows="10" /> <br/>
+        <apex:inputSecret />
+        <apex:inputHidden />
+    </apex:form>
+    <apex:sectionHeader title="SelectList"/>
+    <apex:form id="fm">
+    	<apex:selectList size="1" value="{!selected}" style="width:150px;">
+            <apex:selectOption itemLabel="-None-" itemValue="none"/>
+            <apex:selectOption itemLabel="Hyd" itemValue="TG" itemDisabled="true"/>
+            <apex:selectOption itemLabel="Ban" itemValue="KA"/>
+        </apex:selectList>
+        <apex:commandButton value="go" reRender="fm"/>
+         {!selected}
+    </apex:form>
+    
+    <apex:sectionHeader title="SelectRadio"/>
+    <apex:form id="fm1">
+        
+    	<apex:selectRadio value="{!selected}">
+            <apex:selectOption itemLabel="JAVA" itemValue="Oracle"/>
+            <apex:selectOption itemLabel="SFDC" itemValue="Salesforce"/>
+        </apex:selectRadio>
+        <apex:commandButton value="GO" reRender="fm1"/> {!Selected}
+    </apex:form>
+    
+    <apex:sectionHeader title="SelectCheckboxes"/>
+    <apex:form id="fm3">
+    	<apex:selectCheckboxes value="{!selectme}">
+            <apex:selectOption itemLabel="Jave" itemValue="Oracle" />
+            <apex:selectOption itemLabel="SFDC" itemValue="Salesforce" />
+        </apex:selectCheckboxes>
+        <apex:commandButton value="Go" reRender="fm3"/> {!selectme}
+    </apex:form>
+</apex:page>

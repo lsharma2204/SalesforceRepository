@@ -1,0 +1,17 @@
+<apex:page controller="AccountValidator">
+    <apex:sectionHeader subtitle="Account" title="Insert Operation"/>
+    <apex:form >
+        <apex:pageMessages />
+    	<apex:pageBlock title="Account">
+            <apex:pageBlockButtons >
+            	<apex:commandButton value="Save" action="{!saveMe}"/>
+            </apex:pageBlockButtons>
+        	<apex:pageBlockSection title="General Information" collapsible="false">
+            	<apex:inputField value="{!ac.Name}"/>
+                <apex:inputField value="{!ac.Phone}"/>
+                <apex:inputField value="{!ac.Industry}"/>
+                <apex:inputField value="{!ac.Rating}"/>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

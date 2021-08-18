@@ -1,0 +1,6 @@
+<apex:page controller="JSON_Example_2">
+    <apex:dataTable value="{!resMap}" var="r" cellspacing="10" cellpadding="10" rules="rows" frame="border">
+    	<apex:column value="{!r}" headerValue="Key"/>
+        <apex:column value="{!resMap[r]}" headerValue="Token"/>
+    </apex:dataTable>
+</apex:page>
